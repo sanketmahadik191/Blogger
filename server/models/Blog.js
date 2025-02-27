@@ -10,9 +10,9 @@ const blogSchema = new mongoose.Schema({
     type:String,
   },
   category_name:{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Category',
-    required: [true, 'Category is required'],
+    type: String,
+    required: true,
+    enum: ["Technology", "Travel", "Health", "Food", "Lifestyle", "Education", "Entertainment","Others"],
   },
   content:{
     type:String,
