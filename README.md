@@ -1,6 +1,6 @@
 # Blogger App
 
-A blogging application built using the MERN stack (MongoDB, Express.js, React with Vite, and Node.js) with Tailwind CSS for styling. The app allows users to create, read, update, and delete blog posts.
+A blogging application built using the MERN stack (MongoDB, Express.js, React with Vite, and Node.js) with Tailwind CSS for styling. The app allows users to create, read blog posts.
 
 ## 🚀 Features
 
@@ -20,12 +20,11 @@ A blogging application built using the MERN stack (MongoDB, Express.js, React wi
 ## 📂 Project Structure
 
 ```
-📦 blogger
+📦 Blogger
 ├── 📂 client (Frontend - React + Vite)
 │   ├── 📂 src
 │   │   ├── 📂 components
 │   │   ├── 📂 pages
-│   │   ├── 📂 assets
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   ├── index.css
@@ -39,6 +38,8 @@ A blogging application built using the MERN stack (MongoDB, Express.js, React wi
 │   ├── 📂 routes
 │   ├── 📂 controllers
 │   ├── 📂 middleware
+│   ├── 📂 config
+│   ├── 📂 utils
 │   ├── 📄 index.js
 │   ├── 📄 package.json
 │   ├── 📄 .env
@@ -48,8 +49,8 @@ A blogging application built using the MERN stack (MongoDB, Express.js, React wi
 
 ### Clone the repository
 ```sh
-git clone
-cd 
+git clone https://github.com/sanketmahadik191/Blogger.git
+cd Blogger
 ```
 
 ### Backend Setup
