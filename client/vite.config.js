@@ -11,6 +11,7 @@ export default defineConfig({
   ],
    server:{
      host:"0.0.0.0",
+     allowedHosts: ["blogger-1-9ra8.onrender.com"],
      proxy:{
       "/api":{
          target:"https://blogger-egfo.onrender.com",
