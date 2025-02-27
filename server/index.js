@@ -6,8 +6,9 @@ const cors = require('cors');
 const userRoutes = require('./routes/user.routes');
 const blogRoutes = require('./routes/blog.routes');
 const corsOptions = {
-    origin: ["https://blogger-iqea.vercel.app/"],
+    origin: "*",
     methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   };
 

@@ -10,11 +10,12 @@ export default defineConfig({
     tailwindcss()
   ],
    server:{
+    host:"0.0.0.0",
      proxy:{
       "/api":{
          target:"https://blogger-egfo.onrender.com",
          changeOrigin:true,
-         secure:false
+         secure:true
       }
      }
    }
