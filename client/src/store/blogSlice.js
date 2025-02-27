@@ -4,7 +4,7 @@ import axios from "axios";
 //some apis not implemented ( for future scope only)
 
 export const fetchBlogs = createAsyncThunk("blogs/fetchBlogs", async () => {
-  const response = await axios.get("/api/blogs/");
+  const response = await axios.get("https://blogger-egfo.onrender.com/api/blogs/");
   return response.data.blogs;
 });
 
