@@ -5,10 +5,16 @@ const app = express();
 const cors = require('cors');
 const userRoutes = require('./routes/user.routes');
 const blogRoutes = require('./routes/blog.routes');
+const corsOptions = {
+    origin: ["https://blogger-iqea.vercel.app/"],
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true,
+  };
 
 dotenv.config();
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(express.json());
+
 
 const PORT = process.env.PORT || 3000;
 const DB_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/test"
@@ -21,7 +27,7 @@ app.use('/api/blogs',blogRoutes)
 app.get('/',(req,res)=>{
     res.status(201).json("Succesfull")
 })
-
+app.options("*", cors(corsOptions));
 app.listen(PORT || 3000 , ()=>{
     console.log(`Server started on ${PORT}`)
 })
