@@ -12,12 +12,13 @@ const corsOptions = {
   };
 
 dotenv.config();
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 
 const PORT = process.env.PORT || 3000;
-const DB_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/test"
+const DB_URL = process.env.MONGO_URL;
 
 db(DB_URL);
 
@@ -27,10 +28,8 @@ app.use('/api/blogs',blogRoutes)
 app.get('/',(req,res)=>{
     res.status(201).json("Succesfull")
 })
-app.options("*", cors(corsOptions));
-app.listen(PORT || 3000 , ()=>{
-    console.log(`Server started on ${PORT}`)
-})
+
+
 
 app.use((err, req, res, next) => {
     console.error("Error:", err.stack);
@@ -39,3 +38,7 @@ app.use((err, req, res, next) => {
         message: err.message || "Internal Server Error"
     });
 });
+
+app.listen(PORT || 3000 , ()=>{
+    console.log(`Server started on ${PORT}`)
+})
